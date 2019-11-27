@@ -16,6 +16,17 @@ describe('Calculator', () => {
         expect(getByTestId('entry')).toHaveTextContent('---')
     })
 
+    test('resets on clear', () => {
+        const { getByTestId, getByText } = render(<Calculator />)
+        fireEvent.click(getByText('2'))
+        fireEvent.click(getByText('+'))
+        fireEvent.click(getByText('clear'))
+        expect(getByTestId('entry')).toHaveTextContent('---')
+        fireEvent.click(getByText('7'))
+        fireEvent.click(getByText('='))
+        expect(getByTestId('entry')).toHaveTextContent('7')
+    });
+
     test('adds two numbers and displays correct sum', () => {
         const { getByTestId, getByText } = render(<Calculator />)
         fireEvent.click(getByText('2'))

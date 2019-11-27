@@ -7,13 +7,15 @@ const Calculator = () => {
     const [{ currentEntry, previousEntry, currentOperator }, setState] = useReducer(reducer, {
         currentEntry: '---',
         previousEntry: 0,
-        result: 0,
         currentOperator: '',
     })
 
     const handleClearClick = e => {
         e.preventDefault()
-        setState({ currentEntry: '---' })
+        setState({         
+            currentEntry: '---',
+            previousEntry: 0,
+        })
     }
 
     const handleOperatorClick = e => {
