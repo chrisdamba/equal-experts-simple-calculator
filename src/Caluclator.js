@@ -32,36 +32,38 @@ const Calculator = () => {
     }
 
     const doOperation = operator => {
-        if (operator === '+') {
-            setState({
-                previousEntry: previousEntry + parseInt(currentEntry),
-                currentEntry: '---'
-            })
+        switch (operator) {
+            case '+':
+                setState({
+                    previousEntry: previousEntry + parseInt(currentEntry),
+                    currentEntry: previousEntry + parseInt(currentEntry),
+                })
+                break
+            case '-':
+                setState({
+                    previousEntry: previousEntry - parseInt(currentEntry),
+                    currentEntry: previousEntry - parseInt(currentEntry),
+                })
+                break
+            case 'x':
+                setState({
+                    previousEntry: previousEntry * parseInt(currentEntry),
+                    currentEntry: previousEntry * parseInt(currentEntry),
+                })
+                break
+            case '÷':
+                setState({
+                    previousEntry: previousEntry / parseInt(currentEntry),
+                    currentEntry: previousEntry / parseInt(currentEntry),
+                })
+                break
+            default: 
+                throw new Error(`Unknown operator ${operator}`)
         }
     }
 
     const getResult = () => {
-        if (currentOperator === '+') {
-            setState({
-                previousEntry: previousEntry + parseInt(currentEntry),
-                currentEntry: previousEntry + parseInt(currentEntry),
-            })
-        } else if (currentOperator === 'x') {
-            setState({
-                previousEntry: previousEntry * parseInt(currentEntry),
-                currentEntry: previousEntry * parseInt(currentEntry),
-            })
-        } else if (currentOperator === '÷') {
-            setState({
-                previousEntry: previousEntry / parseInt(currentEntry),
-                currentEntry: previousEntry / parseInt(currentEntry),
-            })
-        } else if (currentOperator === '-') {
-            setState({
-                previousEntry: previousEntry - parseInt(currentEntry),
-                currentEntry: previousEntry - parseInt(currentEntry),
-            })
-        }
+        doOperation(currentOperator)
     }
 
     return (
