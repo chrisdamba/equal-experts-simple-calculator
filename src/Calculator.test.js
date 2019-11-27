@@ -10,4 +10,9 @@ describe('Calculator', () => {
         const { getByTestId } = render(<Calculator />)
         expect(getByTestId('simple-calculator')).toBeTruthy()
     })
+
+    test('has initial entry of 0 displayed', () => {
+        const { getByTestId } = render(<Calculator />)
+        expect(getByTestId('entry')).toHaveTextContent('0')
+    })
 })

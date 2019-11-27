@@ -4,7 +4,7 @@ import './assets/calculator.css'
 const Calculator = () => {
     return (
         <div data-testid="simple-calculator" className="ee-calculator">
-            Simple Calculator
+            <div data-testid="entry" className="ee-calculator-entry">0</div>
         </div>
     )
 }

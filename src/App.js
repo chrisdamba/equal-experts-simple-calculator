@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="App">
       <img alt="Equal Experts Logo" src={logo} className="logo" />
-      <h1>Equal Experts Calculator</h1>
+      <h1>Equal Experts Simple Calculator</h1>
       <Calculator />
     </div>
   )
