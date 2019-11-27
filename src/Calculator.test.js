@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, cleanup } from '@testing-library/react'
+import { render, fireEvent, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
 import Calculator from './Caluclator'
@@ -11,8 +11,17 @@ describe('Calculator', () => {
         expect(getByTestId('simple-calculator')).toBeTruthy()
     })
 
-    test('has initial entry of 0 displayed', () => {
+    test('has initial entry of --- displayed', () => {
         const { getByTestId } = render(<Calculator />)
-        expect(getByTestId('entry')).toHaveTextContent('0')
+        expect(getByTestId('entry')).toHaveTextContent('---')
+    })
+
+    test('adds two numbers and displays correct sum', () => {
+        const { getByTestId, getByText } = render(<Calculator />)
+        fireEvent.click(getByText('2'))
+        fireEvent.click(getByText('+'))
+        fireEvent.click(getByText('9'))
+        fireEvent.click(getByText('='))
+        expect(getByTestId('entry')).toHaveTextContent('11')
     })
 })
