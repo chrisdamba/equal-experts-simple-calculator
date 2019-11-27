@@ -1,8 +1,9 @@
 import React from 'react'
+import './assets/calculator.css'
 
 const Calculator = () => {
     return (
-        <div data-testid="simple-calculator">
+        <div data-testid="simple-calculator" className="ee-calculator">
             Simple Calculator
         </div>
     )
