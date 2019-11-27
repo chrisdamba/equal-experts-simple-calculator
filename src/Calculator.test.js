@@ -33,4 +33,13 @@ describe('Calculator', () => {
         fireEvent.click(getByText('='))
         expect(getByTestId('entry')).toHaveTextContent('18')
     })
+
+    test('divides two numbers and displays correct result', () => {
+        const { getByTestId, getByText } = render(<Calculator />)
+        fireEvent.click(getByText('8'))
+        fireEvent.click(getByText('÷'))
+        fireEvent.click(getByText('4'))
+        fireEvent.click(getByText('='))
+        expect(getByTestId('entry')).toHaveTextContent('2')
+    })
 })

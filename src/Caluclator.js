@@ -51,6 +51,11 @@ const Calculator = () => {
                 previousEntry: previousEntry * parseInt(currentEntry),
                 currentEntry: previousEntry * parseInt(currentEntry),
             })
+        } else if (currentOperator === '÷') {
+            setState({
+                previousEntry: previousEntry / parseInt(currentEntry),
+                currentEntry: previousEntry / parseInt(currentEntry),
+            })
         }
     }
 
