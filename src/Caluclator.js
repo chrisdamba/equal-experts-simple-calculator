@@ -7,6 +7,7 @@ const Calculator = () => {
     const [{ currentEntry, previousEntry, currentOperator }, setState] = useReducer(reducer, {
         currentEntry: '---',
         previousEntry: 0,
+        result: 0,
         currentOperator: '',
     })
 
@@ -40,8 +41,12 @@ const Calculator = () => {
     }
 
     const getResult = () => {
-        doOperation(currentOperator)
-        setState({ currentEntry: previousEntry })
+        if (currentOperator === '+') {
+            setState({
+                previousEntry: previousEntry + parseInt(currentEntry),
+                currentEntry: previousEntry + parseInt(currentEntry),
+            })
+        } 
     }
 
     return (
