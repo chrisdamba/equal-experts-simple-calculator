@@ -6,6 +6,8 @@ import Calculator from './Caluclator'
 
 
 describe('Calculator', () => {
+    afterEach(cleanup)
+
     test('render correctly', () => {
         const { getByTestId } = render(<Calculator />)
         expect(getByTestId('simple-calculator')).toBeTruthy()
