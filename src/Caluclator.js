@@ -14,6 +14,7 @@ const Calculator = () => {
         e.preventDefault()
         setState({         
             currentEntry: '---',
+            currentOperator: '',
         })
     }
 
@@ -58,6 +59,12 @@ const Calculator = () => {
                     currentEntry: previousEntry / parseInt(currentEntry),
                 })
                 break
+            case '':
+                setState({
+                    previousEntry: previousEntry / parseInt(currentEntry),
+                    currentEntry: previousEntry / parseInt(currentEntry),
+                })
+                break
             default: 
                 throw new Error(`Unknown operator ${operator}`)
         }
@@ -65,6 +72,7 @@ const Calculator = () => {
 
     const getResult = () => {
         doOperation(currentOperator)
+        setState({ currentOperator: '', previousEntry: 0 })
     }
 
     return (
