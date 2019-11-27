@@ -24,9 +24,6 @@ describe('Calculator', () => {
         fireEvent.click(getByText('+'))
         fireEvent.click(getByText('clear'))
         expect(getByTestId('entry')).toHaveTextContent('---')
-        fireEvent.click(getByText('7'))
-        fireEvent.click(getByText('='))
-        expect(getByTestId('entry')).toHaveTextContent('7')
     });
 
     test('adds two numbers and displays correct sum', () => {

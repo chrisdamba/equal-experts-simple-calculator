@@ -14,7 +14,6 @@ const Calculator = () => {
         e.preventDefault()
         setState({         
             currentEntry: '---',
-            previousEntry: 0,
         })
     }
 
