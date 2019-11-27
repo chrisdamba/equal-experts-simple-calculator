@@ -24,4 +24,13 @@ describe('Calculator', () => {
         fireEvent.click(getByText('='))
         expect(getByTestId('entry')).toHaveTextContent('11')
     })
+
+    test('multiplies two numbers and displays correct product', () => {
+        const { getByTestId, getByText } = render(<Calculator />)
+        fireEvent.click(getByText('2'))
+        fireEvent.click(getByText('x'))
+        fireEvent.click(getByText('9'))
+        fireEvent.click(getByText('='))
+        expect(getByTestId('entry')).toHaveTextContent('18')
+    })
 })
