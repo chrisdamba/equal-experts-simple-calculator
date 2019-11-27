@@ -65,5 +65,6 @@ The version number for this tech challenge is `38ada8dd45ad9b9c3f5bae33cb41119c5
 ## TODO
 
 - more tests
-- animations
+- refactor tests
+- UI enhancements/animations
 
