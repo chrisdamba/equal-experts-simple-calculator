@@ -7,6 +7,14 @@ This React application is a simple calculator developed for Equal Experts tech t
 
 A live demo can be viewed on https://equal-experts-simple-caluclator.netlify.com/
 
+## Stack:
+
+- React 
+- ES6
+- Jest + React Testing Library
+- React Scripts (from Create React App)
+
+
 ## Getting started
 
 This application is written in Node.js 
@@ -54,4 +62,8 @@ yarn build
 
 The version number for this tech challenge is `38ada8dd45ad9b9c3f5bae33cb41119c526dd243`.
 
+## TODO
+
+- more tests
+- animations
 
